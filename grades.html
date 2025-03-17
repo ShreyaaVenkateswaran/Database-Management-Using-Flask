@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center">
+    <h1>Your Grades</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for grade in grades %}
+            <tr>
+                <td>{{ grade.subject }}</td>
+                <td>{{ grade.grade }}</td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="2">No grades found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
